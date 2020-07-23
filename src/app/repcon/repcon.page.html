@@ -1,0 +1,21 @@
+<style scoped>
+    .message {
+        border-bottom: 1px solid var(--ion-color-step-400);
+        font-family: monospace;
+        margin-bottom: 2px;
+        padding: 2px;
+        white-space: normal;
+    }
+
+    .date {
+        color: var(--ion-color-step-700);
+        font-style: italic;
+    }
+
+</style>
+
+<ion-content>
+    <div class="message" *ngFor="let message of repcon.messages">
+        <span class="date">{{message.date.toLocaleString()}}</span> {{message.string}}
+    </div>
+</ion-content>

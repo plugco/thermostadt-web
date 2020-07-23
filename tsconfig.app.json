@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app"
+  },
+  "include": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/zone-flags.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.d.ts"
+  ]
+}

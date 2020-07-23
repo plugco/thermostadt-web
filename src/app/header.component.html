@@ -1,0 +1,24 @@
+<style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+    ion-title {
+        font-family: 'UnifrakturCook';
+        padding: 0;
+    }
+
+    ion-title>div {
+        white-space: normal;
+        width: 100%;
+    }
+
+</style>
+
+<ion-header>
+    <ion-toolbar [color]="targets.connected ? 'primary' : 'white'">
+        <ion-title>
+            <div>
+                Willkommen in Thermostadt!
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>

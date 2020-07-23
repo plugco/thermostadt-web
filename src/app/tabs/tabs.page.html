@@ -1,0 +1,15 @@
+<ion-tabs (ionTabsWillChange)="onTabsWillChange()" (ionTabsDidChange)="onTabsDidChange($event)">
+    <app-header slot="top"></app-header>
+
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="main" [appActiveTab]="activeTab">
+            <ion-icon name="settings"></ion-icon>
+            <ion-label>Main</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button *ngIf="repcon.enable" tab="repcon" [appActiveTab]="activeTab">
+            <ion-icon name="rocket"></ion-icon>
+            <ion-label>Repcon</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-tabs>

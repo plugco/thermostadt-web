@@ -1,0 +1,19 @@
+<style scoped>
+    ion-input {
+        text-align: end;
+    }
+
+    .unit {
+        margin-inline-start: 8px;
+    }
+
+</style>
+
+<ion-item *ngIf="isLoaded">
+    <ion-label>{{name}}</ion-label>
+    <ion-input *ngIf="!readOnly" slot="end" type="number" [value]="textValue" [placeholder]="placeholder" [step]="step"
+        (change)="onChange($event.target.value)">
+    </ion-input>
+    <div *ngIf="readOnly">{{textValue}}</div>
+    <div *ngIf="unit" slot="end" class="unit">{{unit}}</div>
+</ion-item>

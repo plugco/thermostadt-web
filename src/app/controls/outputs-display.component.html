@@ -1,0 +1,53 @@
+<style scoped>
+    .holder {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .indicator {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ion-color-step-200);
+        color: var(--ion-color-step-950);
+        margin-left: 8px;
+    }
+
+    .indicator ion-icon {
+        font-size: 16px;
+    }
+
+    .indicator.on {
+        background-color: var(--ion-color-warning);
+        color: var(--ion-color-step-200);
+    }
+
+</style>
+
+<ion-item *ngIf="isLoaded">
+    <ion-label>{{name}}</ion-label>
+    <div class="holder" slot="end">
+        <div class="indicator" [class.on]="heating">
+            <ion-icon name="thermometer"></ion-icon>
+            <ion-icon name="arrow-up"></ion-icon>
+        </div>
+        <div class="indicator" [class.on]="cooling">
+            <ion-icon name="thermometer"></ion-icon>
+            <ion-icon name="arrow-down"></ion-icon>
+        </div>
+        <div class="indicator" [class.on]="humidifying">
+            <ion-icon name="water"></ion-icon>
+            <ion-icon name="arrow-up"></ion-icon>
+        </div>
+        <div class="indicator" [class.on]="dehumidifying">
+            <ion-icon name="water"></ion-icon>
+            <ion-icon name="arrow-down"></ion-icon>
+        </div>
+    </div>
+</ion-item>

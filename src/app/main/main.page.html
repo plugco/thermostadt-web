@@ -1,0 +1,44 @@
+<ion-content>
+    <ion-list>
+        <ion-item button lines="full" [disabled]="cannotToggleConnection" (click)="toggleConnection()">
+            <ion-icon *ngIf="connUi.icon" slot="start" [icon]="connUi.icon"></ion-icon>
+            <ion-spinner *ngIf="connUi.spinner" slot="start"></ion-spinner>
+            <ion-label>{{connUi.text}}</ion-label>
+        </ion-item>
+        <ion-item-divider>Status</ion-item-divider>
+        <app-uint-edit name="Temperature" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="25f0dfa0-d54e-4438-adc1-5c6c06120671" [readOnly]="true" [fractionDigits]="3" [multiplier]="0.001"
+            [unit]="'C'">
+        </app-uint-edit>
+        <app-uint-edit name="Humidity" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="e0374566-dee4-4b26-853e-91b3058bcf95" [readOnly]="true" [fractionDigits]="3" [multiplier]="0.001"
+            [unit]="'%'">
+        </app-uint-edit>
+        <app-outputs-display name="Outputs" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="6a8c367a-9478-45b7-961f-ad610d3544eb"></app-outputs-display>
+        <ion-item-divider>Settings</ion-item-divider>
+        <app-uint-edit name="Temp Set" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="56a7e7ea-3a87-4e9a-be04-461548d1849b" [fractionDigits]="1" [multiplier]="0.001" [unit]="'C'">
+        </app-uint-edit>
+        <app-uint-edit name="Temp High Hyst" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="b3194ed5-1423-4536-ad00-06f04d648654" [fractionDigits]="1" [multiplier]="0.001" [unit]="'C'">
+        </app-uint-edit>
+        <app-uint-edit name="Temp Low Hyst" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="80e72425-6756-4ad8-9c8f-9bdc24668a89" [fractionDigits]="1" [multiplier]="0.001" [unit]="'C'">
+        </app-uint-edit>
+        <app-uint-edit name="Humidity Set" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="d6776daf-0340-4a0b-b188-7f2193193ee8" [fractionDigits]="0" [multiplier]="0.001" [unit]="'%'">
+        </app-uint-edit>
+        <app-uint-edit name="Humidity High Hyst" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="7717b2af-4d05-4665-9f90-82d7f3a7f75a" [fractionDigits]="0" [multiplier]="0.001" [unit]="'%'">
+        </app-uint-edit>
+        <app-uint-edit name="Humidity Low Hyst" svc="3a23df09-3de0-412c-be37-508a50d62b41"
+            char="9dce55ff-500b-49fe-b12c-87db2b44c5fc" [fractionDigits]="0" [multiplier]="0.001" [unit]="'%'">
+        </app-uint-edit>
+        <ion-item-divider>Advanced</ion-item-divider>
+        <ion-item>
+            <ion-label>Replacement Console</ion-label>
+            <ion-toggle [(ngModel)]="repcon.enable"></ion-toggle>
+        </ion-item>
+    </ion-list>
+</ion-content>
